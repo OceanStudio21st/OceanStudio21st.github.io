@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaMobile - 由OceanStudio打造</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            padding: 60px 40px;
+        }
+        .title {
+            font-size: 64px;
+            text-align: center;
+            color: #000000;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+        .main-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            margin-bottom: 20px;
+        }
+        .monitor-full {
+            width: 600px;
+            height: auto;
+        }
+        .monitor-info h2 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 16px;
+        }
+        .monitor-info .price {
+            font-size: 24px;
+            color: #555555;
+        }
+        .bottom-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 120px;
+        }
+        .cube-full {
+            width: 200px;
+            height: auto;
+        }
+        .cube-info h3 {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+        .cube-info .price {
+            font-size: 20px;
+            color: #555555;
+        }
+        body {
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.5;
+        }
+        a {
+            text-decoration: none;
+            color: #0071e3;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 固定顶部极简风格 */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(0px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
+        }
+        .nav-logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+        .nav-logo span {
+            color: #0071e3;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+        .nav-links a {
+            font-size: 14px;
+            color: #1d1d1f;
+        }
+        .nav-links a:hover {
+            color: #0071e3;
+            text-decoration: none;
+        }
+
+        /* 英雄区 苹果大图+短文案核心风格 */
+        .hero {
+            margin-top: 44px;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .hero-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .hero-subtitle {
+            font-size: 20px;
+            color: #86868b;
+            margin-bottom: 32px;
+        }
+        .hero-img {
+            width: 100%;
+            border-radius: 0px;
+        }
+
+        /* 产品亮点 苹果卡片式布局 */
+        .features {
+            padding: 80px 0;
+        }
+        .features-title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        .feature-card {
+            background-color: #fff;
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        .feature-card p {
+            color: #86868b;
+        }
+
+        /* 功能展示区 苹果大图配简短说明 */
+        .showcase {
+            padding: 40px 0 80px;
+        }
+        .showcase-item {
+            margin-bottom: 64px;
+        }
+        .showcase-item img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        .showcase-item p {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        /* 下载区 苹果风格按钮 */
+        .download {
+            padding: 60px 0 80px;
+            text-align: center;
+        }
+        .download-btn {
+            background-color: #0071e3;
+            color: #fff;
+            font-size: 18px;
+            padding: 12px 32px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .download-btn:hover {
+            background-color: #0077ed;
+        }
+
+        /* 页脚 苹果极简底部 */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .footer-text {
+            font-size: 14px;
+            color: #86868b;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav">
+            <a href="index.html">OceanStudio</a>
+            <div class="nav-links">
+                <a href="https://www.ilanzou.com/s/mXonh10w">立即下载</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区 -->
+    <section class="hero">
+        <div class="container">
+            <img src="aqualogo.png" alt="PPTOSlogo" class="hero-img">
+            <h1 class="hero-title">AquaOS - 似手机，也是手机*</h1>
+            <p class="hero-subtitle">打破传统PPT局限，沉浸式演示体验，支持多场景灵活切换</p>
+            
+        </div>
+    </section>
+
+    <!-- 产品亮点 -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="features-title">核心亮点</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>极简界面</h3>
+                    <p>仿手机式交互，降低演示操作门槛，聚焦内容本身</p>
+                </div>
+                <div class="feature-card">
+                    <h3>流畅切换</h3>
+                    <p>告别生硬翻页，像刷手机一样顺滑切换演示页面</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">AquaCube - 能量迸发自优雅*</h1>
+            <img src="cube01.png" alt="cube" class="hero-img">
+            <a class= "footer-text" href="cube.html">立即了解</a>
+        </div>
+    </section>
+   
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">2025 OceanStudio
+            <p class="footer-text">*仅为产品目标
+        </div>
+    </footer>
+</body>
+</html>
+<!-- fuck Gemini -->
